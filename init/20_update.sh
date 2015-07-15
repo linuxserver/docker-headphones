@@ -6,4 +6,3 @@ else
 	git checkout master
 fi
 chown -R abc:abc /opt/headphones
-chown -R abc:abc /config
