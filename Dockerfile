@@ -9,10 +9,9 @@ ENV TERM screen
 CMD ["/sbin/my_init"]
 
 # Install Dependencies
-RUN apt-get update -q 
-RUN apt-get install -qy git python wget 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/* 
-RUN mkdir /opt/headphones
+RUN apt-get update -q && \
+apt-get install -qy git python wget && \
+apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 #Volumes and Ports
 EXPOSE 8181
