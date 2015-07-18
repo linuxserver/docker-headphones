@@ -41,10 +41,7 @@ Access WebUI at http://localhost:8181 and walk through the wizard.
 * To monitor the logs of the container in realtime `docker logs -f Headphones`.
 
 
-**Credits**
 
-* smdion <smdion@gmail.com>
+## Version History
 
-**Versions**
-
-* 1.0
++ **18.07.2015:** Inital Release
