@@ -6,3 +6,6 @@ else
 	git pull
 fi
 chown -R abc:abc /opt/headphones
+
+apt-get update -qq
+apt-get --only-upgrade install -yqq ffmpeg
