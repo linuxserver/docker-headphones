@@ -10,6 +10,7 @@ CMD ["/sbin/my_init"]
 
 # Install Dependencies
 RUN apt-get update -q && \
+add-apt-repository ppa:mc3man/trusty-media && \
 apt-get install -qy git ffmpeg python wget && \
 apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
