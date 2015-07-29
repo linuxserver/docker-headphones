@@ -9,10 +9,12 @@ ENV TERM screen
 CMD ["/sbin/my_init"]
 
 # Install Dependencies
+RUN add-apt-repository ppa:mc3man/trusty-media
 RUN apt-get update -q && \
-add-apt-repository ppa:mc3man/trusty-media && \
-apt-get install -qy git ffmpeg python wget && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
+
+
+RUN apt-get install -qy git ffmpeg python wget
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
 #Volumes and Ports
 EXPOSE 8181
