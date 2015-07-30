@@ -5,4 +5,4 @@ else
 	cd /opt/headphones
 	/sbin/setuser abc git pull
 fi
-#chown -R abc:abc /opt/headphones
+chown -R abc:abc /opt/headphones
