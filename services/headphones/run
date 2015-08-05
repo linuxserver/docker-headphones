@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec /sbin/setuser abc python /opt/headphones/Headphones.py -p 8181 --datadir=/config --nolaunch
+exec /sbin/setuser abc python /app/headphones/Headphones.py -p 8181 --datadir=/config --nolaunch
