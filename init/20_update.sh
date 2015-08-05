@@ -1,8 +1,9 @@
 #!/bin/bash
-if [ ! -d /opt/headphones/.git ]; then 
-	git clone https://github.com/rembo10/headphones.git /opt/headphones
+/sbin/setuser abc mkdir -p /app
+
+if [ ! -d /app/headphones/.git ]; then 
+	/sbin/setuser abc git clone https://github.com/rembo10/headphones.git /app/headphones
 else
-	cd /opt/headphones
-	git pull
+	cd /app/headphones
+	/sbin/setuser abc git pull
 fi
-chown -R abc:abc /opt/headphones
