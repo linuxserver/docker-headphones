@@ -1,5 +1,6 @@
 #!/bin/bash
-/sbin/setuser abc mkdir -p /app
+mkdir -p /app
+chown abc:abc /app
 
 if [ ! -d /app/headphones/.git ]; then 
 	/sbin/setuser abc git clone https://github.com/rembo10/headphones.git /app/headphones
