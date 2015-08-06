@@ -13,10 +13,6 @@ RUN apt-get update
 RUN apt-get install -qy git mc ffmpeg python wget
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
 
-#Adduser
-RUN useradd -u 911 -U -s /bin/false abc
-RUN usermod -G users abc
-
 #Adding Custom files
 ADD init/ /etc/my_init.d/
 ADD services/ /etc/service/
