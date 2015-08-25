@@ -1,3 +1,4 @@
 #!/bin/bash
 
+umask 0002
 exec /sbin/setuser abc python /app/headphones/Headphones.py -p 8181 --datadir=/config --nolaunch
