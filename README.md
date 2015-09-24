@@ -10,7 +10,7 @@ Headphones is an automated music downloader for NZB and Torrent, written in Pyth
 ## Usage
 
 ```
-docker create --name="Headphones" -v /path/to/headphones/data:/config -v /path/to/downloads:/downloads -v /path/to/music:/music -v /etc/localtime:/etc/localtime:ro -p 8181:8181 linuxserver/docker-headphones
+docker create --name="Headphones" -v /path/to/headphones/data:/config -v /path/to/downloads:/downloads -v /path/to/music:/music -v /etc/localtime:/etc/localtime:ro -p 8181:8181 linuxserver/headphones
 ```
 
 **Parameters**
