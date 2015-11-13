@@ -1,7 +1,8 @@
 FROM linuxserver/baseimage.python
 MAINTAINER smdion <me@seandion.com>
 
-ENV PYTHONIOENCODING="UTF-8" APTLIST="ffmpeg mc"
+ENV PYTHONIOENCODING="UTF-8" 
+ENV APTLIST="ffmpeg mc shntool"
 
 # Install Dependencies
 RUN add-apt-repository ppa:mc3man/trusty-media && \
