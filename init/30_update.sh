@@ -1,10 +1,13 @@
 #!/bin/bash
-mkdir -p /app
-chown abc:abc /app /config
 
-if [ ! -d /app/headphones/.git ]; then 
-	/sbin/setuser abc git clone https://github.com/rembo10/headphones.git /app/headphones
-else
-	cd /app/headphones
-	/sbin/setuser abc git pull
-fi
+[[ ! -d /app/headphones/.git ]] && (git clone https://github.com/rembo10/headphones.git /app/headphones && \
+chown -R abc:abc /app)
+
+
+# opt out for autoupdates
+[ "$ADVANCED_DISABLEUPDATES" ] && exit 0
+
+cd /app/headphones
+git pull
+chown -R abc:abc /app
+
