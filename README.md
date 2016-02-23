@@ -10,13 +10,20 @@ Headphones is an automated music downloader for NZB and Torrent, written in Pyth
 ## Usage
 
 ```
-docker create --name="Headphones" -v /path/to/headphones/data:/config -v /path/to/downloads:/downloads -v /path/to/music:/music -v /etc/localtime:/etc/localtime:ro -p 8181:8181 linuxserver/headphones
+docker create \
+    --name="Headphones" \
+    -v /path/to/headphones/data:/config \
+    -v /path/to/downloads:/downloads \
+    -v /path/to/music:/music \
+    -v /etc/localtime:/etc/localtime:ro \
+    -p 8181:8181 \
+    linuxserver/headphones
 ```
 
 **Parameters**
 
 * `-p 8181` - the port(s)
-* `-v /etc/localhost` for timesync - *optional*
+* `-v /etc/localtime` for timesync - *optional*
 * `-v /config` - Configuration file location
 * `-v /music` - Location of music. (i.e. /opt/downloads/music or /var/music)
 * `-v /downloads` - Location of downloads folder
@@ -31,7 +38,7 @@ It is based on phusion-baseimage with ssh removed, for shell access whilst the c
 
 Part of what makes our containers work so well is by allowing you to specify your own `PUID` and `PGID`. This avoids nasty permissions errors with relation to data volumes (`-v` flags). When an application is installed on the host OS it is normally added to the common group called users, Docker apps due to the nature of the technology can't be added to this group. So we added this feature to let you easily choose when running your containers.
 
-## Setting up the application 
+## Setting up the application
 
 Access WebUI at http://localhost:8181 and walk through the wizard.
 
