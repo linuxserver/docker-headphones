@@ -1,23 +1,18 @@
-FROM linuxserver/baseimage.python
-MAINTAINER smdion <me@seandion.com>
+FROM lsiobase/alpine.python
+MAINTAINER smdion <me@seandion.com> ,sparklyballs
 
-ENV PYTHONIOENCODING="UTF-8" 
-ENV APTLIST="ffmpeg mc shntool"
+# install packages
+RUN \
+ apk add --no-cache \
+	ffmpeg \
+	mc && \
+ apk add --no-cache --repository \
+ http://nl.alpinelinux.org/alpine/edge/testing \
+	shntool
 
-# Install Dependencies
-RUN add-apt-repository ppa:mc3man/trusty-media && \
-apt-get update && \
-apt-get install -qy $APTLIST && \
-apt-get clean && rm -rf /var/lib/apt/lists/* /var/tmp/*
+# add local files
+COPY root/ /
 
-#Adding Custom files
-ADD init/ /etc/my_init.d/
-ADD services/ /etc/service/
-ADD defaults/ /defaults
-RUN chmod -v +x /etc/service/*/run /etc/my_init.d/*.sh
- 
-#Volumes and Ports
+# ports and volumes
 EXPOSE 8181
 VOLUME ["/config", "/downloads", "/music"]
-
-

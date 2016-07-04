@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/with-contenv bash
 
 [[ ! -d /app/headphones/.git ]] && (git clone https://github.com/rembo10/headphones.git /app/headphones && \
 chown -R abc:abc /app)

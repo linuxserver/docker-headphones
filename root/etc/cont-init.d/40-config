@@ -1,0 +1,7 @@
+#!/usr/bin/with-contenv bash
+
+[[ ! -e /config/config.ini ]] &&  cp /defaults/config.ini /config/config.ini
+
+chown abc:abc /config/*
+
+

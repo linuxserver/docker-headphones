@@ -15,7 +15,8 @@ docker create \
     -v /path/to/headphones/data:/config \
     -v /path/to/downloads:/downloads \
     -v /path/to/music:/music \
-    -v /etc/localtime:/etc/localtime:ro \
+    -e PGID=<gid> -e PUID=<uid> \
+    -e TZ=<timezone> \
     -p 8181:8181 \
     linuxserver/headphones
 ```
@@ -23,14 +24,14 @@ docker create \
 **Parameters**
 
 * `-p 8181` - the port(s)
-* `-v /etc/localtime` for timesync - *optional*
 * `-v /config` - Configuration file location
 * `-v /music` - Location of music. (i.e. /opt/downloads/music or /var/music)
 * `-v /downloads` - Location of downloads folder
 * `-e PGID` for for GroupID - see below for explanation - *optional*
 * `-e PUID` for for UserID - see below for explanation - *optional*
+* `-e TZ` for setting timezone information, eg Europe/London
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it Headphones /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it Headphones /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -51,4 +52,5 @@ Access WebUI at http://localhost:8181 and walk through the wizard.
 
 ## Version History
 
-+ **18.07.2015:** Inital Release
++ **04.07.16:** Rebase to alpine for smaller image size
++ **18.07.15:** Inital Release
