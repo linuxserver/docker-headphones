@@ -1,6 +1,9 @@
-![http://linuxserver.io](http://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
+![https://linuxserver.io](https://www.linuxserver.io/wp-content/uploads/2015/06/linuxserver_medium.png)
 
-The [LinuxServer.io](https://linuxserver.io) team brings you another quality container release featuring auto-update on startup, easy user mapping and community support. Be sure to checkout our [forums](https://forum.linuxserver.io) or for real-time support our [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`.
+The [LinuxServer.io](https://linuxserver.io) team brings you another container release featuring easy user mapping and community support. Find us for support at:
+* [forum.linuxserver.io](https://forum.linuxserver.io)
+* [IRC](https://www.linuxserver.io/index.php/irc/) on freenode at `#linuxserver.io`
+* [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/Headphones
 ![https://github.com/rembo10/headphones](http://i.imgur.com/5vSV3Gkl.png)
@@ -15,7 +18,8 @@ docker create \
     -v /path/to/headphones/data:/config \
     -v /path/to/downloads:/downloads \
     -v /path/to/music:/music \
-    -v /etc/localtime:/etc/localtime:ro \
+    -e PGID=<gid> -e PUID=<uid> \
+    -e TZ=<timezone> \
     -p 8181:8181 \
     linuxserver/headphones
 ```
@@ -23,32 +27,35 @@ docker create \
 **Parameters**
 
 * `-p 8181` - the port(s)
-* `-v /etc/localtime` for timesync - *optional*
 * `-v /config` - Configuration file location
 * `-v /music` - Location of music. (i.e. /opt/downloads/music or /var/music)
 * `-v /downloads` - Location of downloads folder
 * `-e PGID` for for GroupID - see below for explanation - *optional*
 * `-e PUID` for for UserID - see below for explanation - *optional*
+* `-e TZ` for setting timezone information, eg Europe/London
 
-It is based on phusion-baseimage with ssh removed, for shell access whilst the container is running do `docker exec -it Headphones /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it Headphones /bin/bash`.
 
 ### User / Group Identifiers
 
-**TL;DR** - The `PGID` and `PUID` values set the user / group you'd like your container to 'run as' to the host OS. This can be a user you've created or even root (not recommended).
+Sometimes when using data volumes (`-v` flags) permissions issues can arise between the host OS and the container. We avoid this issue by allowing you to specify the user `PUID` and group `PGID`. Ensure the data volume directory on the host is owned by the same user you specify and it will "just work" ™.
 
-Part of what makes our containers work so well is by allowing you to specify your own `PUID` and `PGID`. This avoids nasty permissions errors with relation to data volumes (`-v` flags). When an application is installed on the host OS it is normally added to the common group called users, Docker apps due to the nature of the technology can't be added to this group. So we added this feature to let you easily choose when running your containers.
+In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as below:
+
+```
+  $ id <dockeruser>
+    uid=1001(dockeruser) gid=1001(dockergroup) groups=1001(dockergroup)
+```
 
 ## Setting up the application
 
 Access WebUI at http://localhost:8181 and walk through the wizard.
 
-## Updates
+## Info
 
-* Upgrade to the latest version simply `docker restart Headphones`.
 * To monitor the logs of the container in realtime `docker logs -f Headphones`.
-
-
 
 ## Version History
 
-+ **18.07.2015:** Inital Release
++ **08.08.16:** Rebase to alpine linux.
++ **18.07.15:** Inital Release

@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+# copy config
+[[ ! -e /config/config.ini ]] && \
+	cp /defaults/config.ini /config/config.ini
+
+# permissions
+chown abc:abc \
+	/config/*
