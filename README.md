@@ -64,6 +64,6 @@ Access WebUI at http://localhost:8181 and walk through the wizard.
 
 ## Version History
 
-+ **27.08.16:** Add badges to README.
++ **27.08.16:** Add badges to README, compile shntool.
 + **08.08.16:** Rebase to alpine linux.
 + **18.07.15:** Inital Release
