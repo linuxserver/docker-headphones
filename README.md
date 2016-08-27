@@ -6,9 +6,16 @@ The [LinuxServer.io](https://linuxserver.io) team brings you another container r
 * [Podcast](https://www.linuxserver.io/index.php/category/podcast/) covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/Headphones
-![https://github.com/rembo10/headphones](http://i.imgur.com/5vSV3Gkl.png)
+[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/headphones.svg)][hub]
+[![Docker Stars](https://img.shields.io/docker/stars/linuxserver/headphones.svg)][hub]
+[![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io/linuxserver-headphones)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io/job/linuxserver-headphones/)
+[hub]: https://hub.docker.com/r/linuxserver/headphones/
+
 
 Headphones is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.
+
+[![headphones](http://i.imgur.com/5vSV3Gkl.png)][headurl]
+[headurl]: https://github.com/rembo10/headphones
 
 ## Usage
 
@@ -57,5 +64,6 @@ Access WebUI at http://localhost:8181 and walk through the wizard.
 
 ## Version History
 
++ **27.08.16:** Add badges to README, compile shntool.
 + **08.08.16:** Rebase to alpine linux.
 + **18.07.15:** Inital Release
