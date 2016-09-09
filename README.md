@@ -59,7 +59,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application
 
-Access WebUI at http://localhost:8181 and walk through the wizard.
+Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Info
 
