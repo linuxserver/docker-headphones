@@ -10,12 +10,12 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [IRC][ircurl] on freenode at `#linuxserver.io`
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
-# linuxserver/Headphones
+# linuxserver/headphones
 [![](https://images.microbadger.com/badges/image/linuxserver/headphones.svg)](http://microbadger.com/images/linuxserver/headphones "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/headphones.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/headphones.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-hub-built/linuxserver-headphones)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-hub-built/job/linuxserver-headphones/)
 [hub]: https://hub.docker.com/r/linuxserver/headphones/
 
 
-[Headphones](https://hub.docker.com/r/linuxserver/headphones/) is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.
+[headphones](https://hub.docker.com/r/linuxserver/headphones/) is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.
 
 [![headphones](http://i.imgur.com/5vSV3Gkl.png)][headurl]
 [headurl]: https://github.com/rembo10/headphones
@@ -24,7 +24,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 
 ```
 docker create \
-    --name="Headphones" \
+    --name="headphones" \
     -v /path/to/headphones/data:/config \
     -v /path/to/downloads:/downloads \
     -v /path/to/music:/music \
@@ -50,7 +50,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 * `-e PUID` for for UserID - see below for explanation - *optional*
 * `-e TZ` for setting timezone information, eg Europe/London
 
-It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it Headphones /bin/bash`.
+It is based on alpine linux with s6 overlay, for shell access whilst the container is running do `docker exec -it headphones /bin/bash`.
 
 ### User / Group Identifiers
 
@@ -69,10 +69,11 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Info
 
-* To monitor the logs of the container in realtime `docker logs -f Headphones`.
+* To monitor the logs of the container in realtime `docker logs -f headphones`.
 
 ## Version History
 
++ **23.12.16:** Fix capitalisation in README.
 + **09.09.16:** Add layer badges to README.
 + **27.08.16:** Add badges to README, compile shntool.
 + **08.08.16:** Rebase to alpine linux.
