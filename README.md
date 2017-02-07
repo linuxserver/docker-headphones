@@ -73,6 +73,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Version History
 
++ **07.02.17:** Rebase to alpine 3.5.
 + **23.12.16:** Fix capitalisation in README.
 + **09.09.16:** Add layer badges to README.
 + **27.08.16:** Add badges to README, compile shntool.
