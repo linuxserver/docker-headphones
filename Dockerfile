@@ -1,4 +1,4 @@
-FROM lsiobase/alpine.python
+FROM lsiobase/alpine.python:3.5
 MAINTAINER smdion <me@seandion.com> ,sparklyballs
 
 # install packages
