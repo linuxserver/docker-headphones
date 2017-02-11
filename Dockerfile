@@ -5,7 +5,8 @@ MAINTAINER smdion <me@seandion.com> ,sparklyballs
 RUN \
  apk add --no-cache \
 	ffmpeg \
-	mc
+	mc \
+	openssl
 
 # install build packages
 RUN \
