@@ -2,6 +2,8 @@
 [forumurl]: https://forum.linuxserver.io
 [ircurl]: https://www.linuxserver.io/irc/
 [podcasturl]: https://www.linuxserver.io/podcast/
+[appurl]: https://github.com/rembo10/headphones
+[hub]: https://hub.docker.com/r/linuxserver/headphones/
 
 [![linuxserver.io](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/linuxserver_medium.png)][linuxserverurl]
 
@@ -12,13 +14,11 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 
 # linuxserver/headphones
 [![](https://images.microbadger.com/badges/image/linuxserver/headphones.svg)](http://microbadger.com/images/linuxserver/headphones "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/headphones.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/headphones.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-hub-built/linuxserver-headphones)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-hub-built/job/linuxserver-headphones/)
-[hub]: https://hub.docker.com/r/linuxserver/headphones/
 
 
 [headphones](https://hub.docker.com/r/linuxserver/headphones/) is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.
 
-[![headphones](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/headphones-banner.png)][headurl]
-[headurl]: https://github.com/rembo10/headphones
+[![headphones](https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/headphones-banner.png)][appurl]
 
 ## Usage
 
