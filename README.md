@@ -73,6 +73,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Version History
 
++ **25.05.17:** Rebase to alpine 3.6.
 + **03.05.17:** Reduce layer, replace broken source for shntool.
 + **07.02.17:** Rebase to alpine 3.5.
 + **23.12.16:** Fix capitalisation in README.
