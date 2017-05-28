@@ -16,6 +16,7 @@ RUN \
 # install runtime packages
  apk add --no-cache \
 	ffmpeg \
+	flac \
 	mc && \
 
 # compile shntool
