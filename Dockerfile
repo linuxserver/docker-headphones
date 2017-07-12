@@ -6,6 +6,9 @@ ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 
+# copy patches folder
+COPY patches/ /tmp/patches/
+
 # install build packages
 RUN \
  apk add --no-cache --virtual=build-dependencies \
@@ -27,6 +30,7 @@ RUN \
 	http://etree.org/shnutils/shntool/dist/src/shntool-3.0.10.tar.gz && \
  tar xf /tmp/shntool-src-tar.gz -C \
 	/tmp/shntool --strip-components=1 && \
+ cp /tmp/patches/config.* /tmp/shntool && \
  cd /tmp/shntool && \
  ./configure \
 	--infodir=/usr/share/info \

@@ -13,8 +13,7 @@ The [LinuxServer.io][linuxserverurl] team brings you another container release f
 * [Podcast][podcasturl] covers everything to do with getting the most from your Linux Server plus a focus on all things Docker and containerisation!
 
 # linuxserver/headphones
-[![](https://images.microbadger.com/badges/image/linuxserver/headphones.svg)](http://microbadger.com/images/linuxserver/headphones "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/headphones.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/headphones.svg)][hub][![Build Status](http://jenkins.linuxserver.io:8080/buildStatus/icon?job=Dockers/LinuxServer.io-hub-built/linuxserver-headphones)](http://jenkins.linuxserver.io:8080/job/Dockers/job/LinuxServer.io-hub-built/job/linuxserver-headphones/)
-
+[![](https://images.microbadger.com/badges/version/linuxserver/headphones.svg)](https://microbadger.com/images/linuxserver/headphones "Get your own version badge on microbadger.com")[![](https://images.microbadger.com/badges/image/linuxserver/headphones.svg)](https://microbadger.com/images/linuxserver/headphones "Get your own image badge on microbadger.com")[![Docker Pulls](https://img.shields.io/docker/pulls/linuxserver/headphones.svg)][hub][![Docker Stars](https://img.shields.io/docker/stars/linuxserver/headphones.svg)][hub][![Build Status](https://ci.linuxserver.io/buildStatus/icon?job=Docker-Builders/x86-64/x86-64-headphones)](https://ci.linuxserver.io/job/Docker-Builders/job/x86-64/job/x86-64-headphones/)
 
 [headphones](https://hub.docker.com/r/linuxserver/headphones/) is an automated music downloader for NZB and Torrent, written in Python. It supports SABnzbd, NZBget, Transmission, µTorrent and Blackhole.
 
@@ -71,8 +70,17 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 * To monitor the logs of the container in realtime `docker logs -f headphones`.
 
-## Version History
+* container version number 
 
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' headphones`
+
+* image version number
+
+`docker inspect -f '{{ index .Config.Labels "build_version" }}' linuxserver/headphones`
+
+## Versions
+
++ **12.07.17:** Add inspect commands to README, move to jenkins build and push.
 + **28.05.17:** Add flac package to handle FLAC based .cue.
 + **25.05.17:** Rebase to alpine 3.6.
 + **03.05.17:** Reduce layer, replace broken source for shntool.
