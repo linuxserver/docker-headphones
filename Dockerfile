@@ -1,5 +1,5 @@
 FROM lsiobase/alpine.python:3.6
-MAINTAINER smdion <me@seandion.com> ,sparklyballs
+MAINTAINER sparklyballs
 
 # set version label
 ARG BUILD_DATE
@@ -37,6 +37,9 @@ RUN \
 	--sysconfdir=/etc && \
  make && \
  make install && \
+
+# install app
+ git clone --depth 1 https://github.com/rembo10/headphones.git /app/headphones && \
 
 # cleanup
  apk del --purge \

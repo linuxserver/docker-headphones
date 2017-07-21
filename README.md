@@ -80,6 +80,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Versions
 
++ **20.07.17:** Internal git pull instead of at runtime.
 + **12.07.17:** Add inspect commands to README, move to jenkins build and push.
 + **28.05.17:** Add flac package to handle FLAC based .cue.
 + **25.05.17:** Rebase to alpine 3.6.
