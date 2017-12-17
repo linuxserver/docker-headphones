@@ -1,28 +1,26 @@
-FROM lsiobase/alpine.python:3.6
-MAINTAINER sparklyballs
+FROM lsiobase/alpine.python:3.7
 
 # set version label
 ARG BUILD_DATE
 ARG VERSION
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
+LABEL maintainer="sparklyballs"
 
 # copy patches folder
 COPY patches/ /tmp/patches/
 
-# install build packages
 RUN \
+ echo "**** install build packages ****" && \
  apk add --no-cache --virtual=build-dependencies \
 	g++ \
 	gcc \
 	make && \
-
-# install runtime packages
+ echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	ffmpeg \
 	flac \
 	mc && \
-
-# compile shntool
+ echo "**** compile shntool *** *" && \
  mkdir -p \
 	/tmp/shntool && \
  tar xf /tmp/patches/shntool-3.0.10.tar.gz -C \
@@ -35,13 +33,24 @@ RUN \
 	--mandir=/usr/share/man \
 	--prefix=/usr \
 	--sysconfdir=/etc && \
- make && \
+ echo "**** attempt to set number of cores available for make to use ****" && \
+ set -ex && \
+ CPU_CORES=$( < /proc/cpuinfo grep -c processor ) || echo "failed cpu look up" && \
+ if echo $CPU_CORES | grep -E  -q '^[0-9]+$'; then \
+	: ;\
+ if [ "$CPU_CORES" -gt 7 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 3 )); \
+ elif [ "$CPU_CORES" -gt 5 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 2 )); \
+ elif [ "$CPU_CORES" -gt 3 ]; then \
+	CPU_CORES=$(( CPU_CORES  - 1 )); fi \
+ else CPU_CORES="1"; fi && \
+ make -j $CPU_CORES && \
+ set +ex && \
  make install && \
-
-# install app
+ echo "**** install app ****" && \
  git clone --depth 1 https://github.com/rembo10/headphones.git /app/headphones && \
-
-# cleanup
+ echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
  rm -rf \
