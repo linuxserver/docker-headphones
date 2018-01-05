@@ -80,6 +80,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Versions
 
++ **05.01.18:** Deprecate cpu_core routine lack of scaling.
 + **12.12.17:** Rebase to alpine 3.7.
 + **20.07.17:** Internal git pull instead of at runtime.
 + **12.07.17:** Add inspect commands to README, move to jenkins build and push.
