@@ -80,6 +80,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Versions
 
++ **18.08.18:** Rebase to alpine 3.8.
 + **03.04.18:** Remove forced port and update README.
 + **05.01.18:** Deprecate cpu_core routine lack of scaling.
 + **12.12.17:** Rebase to alpine 3.7.
