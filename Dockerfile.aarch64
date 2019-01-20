@@ -6,7 +6,6 @@ COPY qemu-aarch64-static /usr/bin
 # set version label
 ARG BUILD_DATE
 ARG VERSION
-ARG HEADPHONES_COMMIT
 LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DATE}"
 LABEL maintainer="sparklyballs"
 
@@ -18,7 +17,6 @@ RUN \
  apk add --no-cache --virtual=build-dependencies \
 	g++ \
 	gcc \
-	jq \
 	make && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
@@ -41,16 +39,7 @@ RUN \
  make && \
  make install && \
  echo "**** install app ****" && \
- if [ -z ${HEADPHONES_COMMIT+x} ]; then \
-	HEADPHONES_COMMIT=$(curl -sX GET https://api.github.com/repos/rembo10/headphones/commits/master \
-	| jq -r '. | .sha'); \
- fi && \
- mkdir -p /app/headphones && \
- cd /app/headphones && \
- git init && \
- git remote add origin https://github.com/rembo10/headphones.git && \
- git fetch --depth 1 origin ${HEADPHONES_COMMIT} && \
- git checkout FETCH_HEAD && \
+ git clone --depth 1 https://github.com/rembo10/headphones.git /app/headphones && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
