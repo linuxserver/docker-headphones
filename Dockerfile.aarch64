@@ -46,12 +46,11 @@ RUN \
 	| jq -r '. | .sha'); \
  fi && \
  mkdir -p /app/headphones && \
- curl -o \
- /tmp/headphones.tar.gz -L \
-	"https://github.com/rembo10/headphones/archive/${HEADPHONES_COMMIT}.tar.gz" && \
- tar xf \
- /tmp/headphones.tar.gz -C \
-	/app/headphones --strip-components=1 && \
+ cd /app/headphones && \
+ git init && \
+ git remote add origin https://github.com/rembo10/headphones.git && \
+ git fetch --depth 1 origin ${HEADPHONES_COMMIT} && \
+ git checkout FETCH_HEAD && \
  echo "**** cleanup ****" && \
  apk del --purge \
 	build-dependencies && \
