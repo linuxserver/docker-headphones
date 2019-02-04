@@ -35,7 +35,7 @@ docker create \
 
 ## Parameters
 
-`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side. 
+`The parameters are split into two halves, separated by a colon, the left hand side representing the host and the right the container side.
 For example with a port -p external:internal - what this shows is the port mapping from internal to external of the container.
 So -p 8080:80 would expose port 80 from inside the container to be accessible from the host's IP on port 8080
 http://192.168.x.x:8080 would show you what's running INSIDE the container on port 80.`
@@ -70,7 +70,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 * To monitor the logs of the container in realtime `docker logs -f headphones`.
 
-* container version number 
+* container version number
 
 `docker inspect -f '{{ index .Config.Labels "build_version" }}' headphones`
 
@@ -80,6 +80,7 @@ Access WebUI at `<your-ip>:8181` and walk through the wizard.
 
 ## Versions
 
++ **16.01.19:** Add pipeline logic and multi arch.
 + **18.08.18:** Rebase to alpine 3.8.
 + **03.04.18:** Remove forced port and update README.
 + **05.01.18:** Deprecate cpu_core routine lack of scaling.
