@@ -17,7 +17,7 @@ freetype-2.10.1-r0
 fribidi-1.0.8-r0
 gdbm-1.13-r1
 git-2.24.1-r0
-glib-2.62.3-r0
+glib-2.62.4-r0
 gmp-6.1.2-r1
 gnutls-3.6.10-r0
 lame-3.100-r0
