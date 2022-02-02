@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine-python:3.11
+FROM ghcr.io/linuxserver/baseimage-alpine:3.15
 
 # set version label
 ARG BUILD_DATE
@@ -21,7 +21,9 @@ RUN \
  apk add --no-cache \
 	ffmpeg \
 	flac \
-	mc && \
+	git \
+	mc \
+	python3 && \
  echo "**** compile shntool *** *" && \
  mkdir -p \
 	/tmp/shntool && \
