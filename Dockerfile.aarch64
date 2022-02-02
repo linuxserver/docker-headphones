@@ -16,12 +16,12 @@ RUN \
  apk add --no-cache --virtual=build-dependencies \
 	g++ \
 	gcc \
+	git \
 	make && \
  echo "**** install runtime packages ****" && \
  apk add --no-cache \
 	ffmpeg \
 	flac \
-	git \
 	mc \
 	python3 && \
  echo "**** compile shntool *** *" && \
