@@ -10,7 +10,7 @@ ca-certificates-20211220-r0
 ca-certificates-bundle-20211220-r0
 coreutils-9.0-r2
 e2fsprogs-libs-1.46.4-r0
-expat-2.4.6-r0
+expat-2.4.7-r0
 ffmpeg-4.4.1-r2
 ffmpeg-libs-4.4.1-r2
 flac-1.3.4-r0
