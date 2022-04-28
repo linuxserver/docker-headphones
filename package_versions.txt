@@ -34,7 +34,7 @@ libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
 libcom_err-1.46.4-r0
 libcrypto1.1-1.1.1n-r0
-libcurl-7.80.0-r0
+libcurl-7.80.0-r1
 libdav1d-0.9.2-r0
 libdrm-2.4.109-r0
 libffi-3.4.2-r1
