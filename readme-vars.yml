@@ -74,9 +74,6 @@ optional_block_1_items:
 app_setup_block_enabled: false
 app_setup_block: ""
 
-nginx_reverse_proxy_snippet_enabled: true
-nginx_reverse_proxy_block: "Access WebUI at `<your-ip>:8181` and walk through the wizard."
-
 # changelog
 changelogs:
   - { date: "02.02.22:", desc: "Rebasing to alpine 3.15. Updating to Python 3." }
