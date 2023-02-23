@@ -76,9 +76,9 @@ services:
       - PGID=1000
       - TZ=Etc/UTC
     volumes:
-      - </path/to/appdata/config>:/config
-      - </path/to/downloads>:/downloads
-      - </path/to/music>:/music
+      - /path/to/appdata/config:/config
+      - /path/to/downloads:/downloads
+      - /path/to/music:/music
     ports:
       - 8181:8181
     restart: unless-stopped
@@ -93,9 +93,9 @@ docker run -d \
   -e PGID=1000 \
   -e TZ=Etc/UTC \
   -p 8181:8181 \
-  -v </path/to/appdata/config>:/config \
-  -v </path/to/downloads>:/downloads \
-  -v </path/to/music>:/music \
+  -v /path/to/appdata/config:/config \
+  -v /path/to/downloads:/downloads \
+  -v /path/to/music:/music \
   --restart unless-stopped \
   lscr.io/linuxserver/headphones:latest
 
@@ -224,6 +224,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **23.02.23:** - Rebase to Alpine 3.17, migrate to s6v3.
 * **02.02.22:** - Rebasing to alpine 3.15. Updating to Python 3.
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **28.06.19:** - Rebasing to alpine 3.10.
