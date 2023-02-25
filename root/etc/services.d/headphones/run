@@ -1,5 +1,0 @@
-#!/usr/bin/with-contenv bash
-
-exec \
-	s6-setuidgid abc python3 /app/headphones/Headphones.py \
-	--datadir=/config

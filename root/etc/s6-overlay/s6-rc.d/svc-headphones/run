@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+# shellcheck shell=bash
+
+PORT=$(grep "http_port" '/config/config.ini' | awk -F '=' '{print $2}' | tr -d ' ')
+
+exec \
+    s6-notifyoncheck -d -n 300 -w 1000 -c "nc -z localhost ${PORT}" \
+        s6-setuidgid abc python3 /app/headphones/Headphones.py \
+        --datadir=/config
