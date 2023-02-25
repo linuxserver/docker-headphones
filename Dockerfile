@@ -51,6 +51,7 @@ RUN \
   tar xf \
     /tmp/headphones.tar.gz -C \
     /app/headphones --strip-components=1 && \
+  echo ${HEADPHONES_COMMIT} > /app/headphones/version.txt && \
   echo "**** cleanup ****" && \
   apk del --purge \
     build-dependencies && \
