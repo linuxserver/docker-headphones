@@ -17,7 +17,7 @@ cjson                   1.7.15-r3              apk
 coreutils               9.1-r0                 apk     
 curl                    7.88.1-r0              apk     
 dbus-libs               1.14.4-r0              apk     
-e2fsprogs-libs          1.46.5-r4              apk     
+e2fsprogs-libs          1.46.6-r0              apk     
 ffmpeg                  5.1.2-r1               apk     
 ffmpeg-libs             5.1.2-r1               apk     
 flac                    1.4.2-r0               apk     
@@ -43,7 +43,7 @@ libblkid                2.38.1-r1              apk
 libbsd                  0.11.7-r0              apk     
 libbz2                  1.0.8-r4               apk     
 libc-utils              0.7.2-r3               apk     
-libcom_err              1.46.5-r4              apk     
+libcom_err              1.46.6-r0              apk     
 libcrypto3              3.0.8-r0               apk     
 libcurl                 7.88.1-r0              apk     
 libdav1d                1.0.0-r2               apk     
